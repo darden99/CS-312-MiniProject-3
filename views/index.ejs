@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Feed</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <% if (user) { %>
+    <p>Welcome, <%= user.name %>! <a href="/logout">Logout</a></p>
+    <a href="/new">Create Post</a>
+  <% } else { %>
+    <a href="/login">Login</a> | <a href="/signup">Signup</a>
+  <% } %>
+
+  <h1>Blog Posts</h1>
+
+  <% posts.forEach(post => { %>
+    <div class="post">
+      <h3><%= post.title %></h3>
+      <p><%= post.body %></p>
+      <em>By <%= post.creator_name %> on <%= post.date_created.toLocaleString() %></em>
+
+      <% if (user && user.user_id === post.creator_user_id) { %>
+        <div class="post-buttons">
+          <form method="GET" action="/edit/<%= post.blog_id %>">
+            <button>Edit</button>
+          </form>
+          <form method="POST" action="/delete/<%= post.blog_id %>">
+            <button>Delete</button>
+          </form>
+        </div>
+      <% } %>
+    </div>
+  <% }) %>
+
+  <div id="footer">
+    &copy; 2025 Daniel Arden
+  </div>
+</body>
+</html>

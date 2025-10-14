@@ -1,0 +1,132 @@
+body {
+  background-color: #FDF5E6;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  color: #333;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 10px 0;
+  color: #FF6600;
+  font-weight: bold;
+  text-align: center;
+}
+
+a:link { color: blue; }
+a:visited { color: purple; }
+a:hover { color: red; }
+a:active { color: pink; }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+  font-size: 1rem;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.post {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.post h3 {
+  margin: 0 0 5px 0;
+  color: #007BFF;
+}
+
+.post p {
+  margin: 5px 0;
+}
+
+.post em {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: auto; 
+}
+
+.post-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.post-buttons button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.post-buttons button:first-of-type {
+  background-color: #28a745; 
+}
+
+.post-buttons button:hover:first-of-type {
+  background-color: #218838;
+}
+
+.post-buttons button:last-of-type {
+  background-color: #dc3545; 
+}
+
+.post-buttons button:hover:last-of-type {
+  background-color: #c82333;
+}
+
+#footer {
+  clear: both;
+  padding: 10px;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  body { margin: 20px auto; padding: 10px; }
+  form { padding: 10px; }
+  .post-buttons { flex-direction: column; }
+  .post-buttons button { width: 100%; }
+}
